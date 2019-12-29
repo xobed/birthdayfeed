@@ -190,4 +190,5 @@ def main():
     app.logger.debug(f'birthdayfeed {config.version}')
     app.logger.debug(f'Changing log level to {config.log_level}')
     logging.getLogger().setLevel(config.log_level)
-    waitress.serve(app)
+    port = os.environ['PORT']
+    waitress.serve(app, port=port)
